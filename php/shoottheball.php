@@ -1,7 +1,7 @@
 <?php
 
     $successCount = 0;
-    $epicFailCount = 0;
+    $failCount = 0;
 
     echo "Practice starts...\n";
 
@@ -12,11 +12,11 @@
         if ($result == 1) {
             $successCount++;
         } else {
-            $epicFailCount++;
+            $failCount++;
         }
 
         echo "Attempt #$attempt: Shooting the ball... $message ... ";
-        echo "Got $successCount success and $epicFailCount epic fail(s) so far<br>";
+        echo "Got $successCount success and $failCount epic fail(s) so far<br>";
     }
 
     echo "Practice ended.";
