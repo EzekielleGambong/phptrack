@@ -12,7 +12,11 @@
             </div>
             <div>
                 <label for="course">Course Title</label>
-                <input type="text" id="course" name="course">
+                <select id="course" name="course">
+                    <option value="1">PHP track</option>
+                    <option value="2">Web fundamentals</option>
+                    
+                </select>
             </div>
             <div>
                 <label for="score">Given score (1-10)</label>

@@ -1,7 +1,6 @@
 <?php
 header('Content-type: application/x-javascript');
 
-// Generate a random multiplier
 $multiplier = rand(10, 20);
 ?>
 

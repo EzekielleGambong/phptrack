@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Report Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Bug Report Form</h2>
+        <form action="submit_bug.php" method="post" enctype="multipart/form-data">
+            <label for="date_today">Date Today*</label>
+            <input type="text" name="date_today" required>
+
+            <label for="first_name">First Name*</label>
+            <input type="text" name="first_name" required>
+
+            <label for="last_name">Last Name*</label>
+            <input type="text" name="last_name" required>
+
+            <label for="email">Email*</label>
+            <input type="email" name="email" required>
+
+            <label for="issue_title">Issue Title*</label>
+            <input type="text" name="issue_title" maxlength="50" required>
+
+            <label for="issue_details">Issue Details*</label>
+            <textarea name="issue_details" rows="4" maxlength="250" required></textarea>
+
+            <label for="screenshot">Screenshot (Optional)</label>
+            <input type="file" name="screenshot">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

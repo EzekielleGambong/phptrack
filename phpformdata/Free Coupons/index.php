@@ -3,7 +3,8 @@
     var_dump($_SESSION);
     // $_SESSION = array();
     $customerLeft = 10;
-    $coupon = 0;
+    $titleDisc = "";
+    $randomNum = "";
 ?>
 <html>
     <head>
@@ -18,37 +19,39 @@
     <?php 
                 if (isset($_SESSION['counter'])) {
                     
-                    if ($customerLeft == 1){
-                        $customerLeft = 10;
-                        $coupon = 1;
+                    if ($_SESSION['counter'] == 9){
+                        $titleDisc = "Sorry";
+                        $randomNum = "Unavailable";
+
                     } else {
                         $customerLeft = $customerLeft - $_SESSION['counter'];
-                        $coupon = 2;
+                        $titleDisc = "50% Discount";
+                        $randomNum = rand ( 0000000 , 9999999 );
                     }
-                    
                 }
-                switch ($coupon) {
-                    case '1':
-                        echo'unavail';
-                        break;
-
-                    case '2':
-                        echo'avail';
-                        break;
-                    default:
-                }
+                
             ?>
         <div class="wrapper">
             <h1>Welcome Customer</h1>
             <p>We're giving away free coupons<br>as token of appreciation<br></p> 
             <p>for first <?= $customerLeft ?> customer(s)</p>
-        
-            <form action="discounted.php" method="post">
+            
+            <form >
                 <label for="name">Kindly type your name</label><br>
                 <input type="text" id="name" name="name"><br>
                 <input type="submit">
             </form>
             
+            <div id="coupon" >
+                <h3><?= $titleDisc ?> </h3>
+                <h1><?= $randomNum ?> </h1>
+                <form action="reset.php" method="post">
+                    <input  type="submit" value="Reset">
+                </form>
+                <form action="discounted.php" method="post">
+                    <input  type="submit" value="Claim">
+                </form>
+            </div>
             
         </div>
     </body>

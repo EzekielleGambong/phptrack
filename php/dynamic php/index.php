@@ -7,7 +7,6 @@
 </head>
 <body>
     <?php
-    // Display five images with different ticket numbers
     for ($i = 0; $i < 5; $i++) {
         echo '<img src="generate_image.php" alt="Ticket Image">' . PHP_EOL;
     }
