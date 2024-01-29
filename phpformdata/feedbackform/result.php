@@ -1,4 +1,5 @@
 <html>
+<?= header("Location: index.php");?>
     <h1>Submitted Entry</h1>
     <p>Your name (optional):    <?= $_POST['name'] ?></p>
     <p>Course Title:    <?= $_POST['course'] ?></p>
