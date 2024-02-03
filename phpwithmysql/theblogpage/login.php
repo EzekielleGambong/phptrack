@@ -17,9 +17,14 @@ echo "Password: " . $loginPassword . "<br>";
 
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
-    echo "User ID: " . $user['id'] . "<br>";
-    echo "Login successful! Welcome, " . $user['first_name'] . "!<br>";
-    echo '<a href="logout.php">Log Out</a>';
+    // echo "User ID: " . $user['id'] . "<br>";
+    // echo "Login successful! Welcome, " . $user['first_name'] . "!<br>";
+    // echo '<a href="logout.php">Log Out</a>';
+    $_SESSION['logged_in'] = TRUE;
+    $_SESSION['userName'] = $user['first_name'];
+    header("Location: index.php");
+    
+    
 } else {
     echo "Invalid login credentials.";
 }

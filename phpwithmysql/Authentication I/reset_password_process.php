@@ -1,5 +1,4 @@
 <?php
-// Database connection
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
@@ -11,11 +10,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Form data
 $resetContactNumber = mysqli_real_escape_string($conn, $_POST['resetContactNumber']);
-$newPassword = md5('village88'); // Default password for reset
-
-// Update password in the database
+$newPassword = md5('village88'); 
 $sql = "UPDATE users SET password='$newPassword' WHERE contact_number='$resetContactNumber'";
 
 if ($conn->query($sql) === TRUE) {

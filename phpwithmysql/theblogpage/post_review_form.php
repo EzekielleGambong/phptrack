@@ -1,11 +1,34 @@
-<div class="form-group">
-    <form action="post_review.php" method="post">
-        <label for="title">Title:</label>
-        <input type="text" name="title" required>
-        
-        <label for="content">Content:</label>
-        <textarea name="content" rows="4" required></textarea>
+<?php 
+include('db_connection.php');
 
-        <button type="submit">Post Review</button>
+$sql = "SELECT * FROM reviews";
+$result = $conn->query($sql);
+
+
+?>
+
+<html>
+    <h1>Leave a review</h1>
+    <form action="insertreview.php" method="post">
+            <textarea name="leaveReview" ></textarea>
+            <input type="submit" value="Comment" >
     </form>
-</div>
+    <br><br><br><br>
+
+<?php       if ($result->num_rows > 0) { ?>
+                <div>
+<?php               while ($row = $result->fetch_assoc()) { ?>
+                        <p> Reviewed by: <?= $row['author']; ?> <span> <?= $row['created_at'] ?></p>
+                        <p> Comment: <?= $row['content']; ?>  </p>
+                        <form action="reply_review.php" method="post" >
+                            <textarea name="replyArea" ></textarea>
+                            <input type="submit" value="Reply">
+                        </form>
+                        <br>
+<?php               } ?>
+                </div>
+<?php         } else { ?>
+                    <p>No entries found.</p>
+<?php       } ?>
+      
+</html>

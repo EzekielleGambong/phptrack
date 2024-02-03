@@ -1,17 +1,14 @@
 <?php
-// Database connection
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
 $dbname = "raffle_entry";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Form validation
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contactNumber = mysqli_real_escape_string($conn, $_POST["contactNumber"]);
 

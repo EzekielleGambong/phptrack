@@ -10,7 +10,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch all entries from the database
 $sql = "SELECT * FROM contacts";
 $result = $conn->query($sql);
 ?>
