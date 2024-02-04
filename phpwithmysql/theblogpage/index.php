@@ -10,10 +10,12 @@
 <?php 
 session_start();
 // $_SESSION=array();
-var_dump($_SESSION);
 ?>
 <div class="container">
     <a href="form.php">Sign in</a>';
+    <form action="logout.php" >
+            <input type="submit" value="LogOut" >
+    </form>
     <p><?= $_SESSION['userName']; ?></p>
     <?php include('display_reviews.php'); ?>
     <?php
@@ -24,21 +26,6 @@ var_dump($_SESSION);
         }
     ?>
 
-    <!-- <form action="register.php" method="post">
-        <textarea name="postReviewText" id="postReviewText" cols="30" rows="10"></textarea>
-        <input type="submit">
-    </form> -->
-    <!-- Display Reviews -->
-    <!-- <?php include('display_reviews.php'); ?> -->
-
-    <!-- Login Form -->
-    <!-- <?php include('login_form.php'); ?> -->
-
-    <!-- Post Review Form -->
-    <!-- <?php include('post_review_form.php'); ?> -->
-
-    <!-- Reply Form -->
-    <!-- <?php include('reply_form.php'); ?> -->
     </div>
     
 

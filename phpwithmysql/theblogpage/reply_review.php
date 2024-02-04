@@ -2,11 +2,12 @@
 include('db_connection.php');
 session_start();
 
-$leaveReview = mysqli_real_escape_string($conn, $_POST['leaveReview']);
+$content = mysqli_real_escape_string($conn, $_POST['replyArea']);
 $author = $_SESSION['userName'];
-
+$reviewId = $_POST['replyId'];  // Retrieve the replyId from $_POST
 $created_at = date("Y-m-d H:i:s");
-$sql = "INSERT INTO reviews (author, content, created_at) VALUES ('$author', '$leaveReview', '$created_at')";
+
+$sql = "INSERT INTO replies (author, content, created_at, reviewId) VALUES ('$author', '$content', '$created_at', '$reviewId')";
 
 if ($conn->query($sql) === TRUE) {
     header("Location: index.php");
@@ -15,4 +16,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+
 ?>

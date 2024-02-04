@@ -22,6 +22,7 @@ if ($result->num_rows > 0) {
     // echo '<a href="logout.php">Log Out</a>';
     $_SESSION['logged_in'] = TRUE;
     $_SESSION['userName'] = $user['first_name'];
+    $_SESSION['userid'] = $user['id'];
     header("Location: index.php");
     
     
