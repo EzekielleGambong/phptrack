@@ -14,17 +14,17 @@ class House {
         $this->type = $type;
         $this->discount = ($type === 'Pre-selling') ? 0.2 : 0.05;
 
-        // Call the show_all() method to display information about the house
+       
         $this->show_all();
     }
 
     public function show_all() {
-        echo "Location: {$this->location}\n";
-        echo "Price: {$this->price}\n";
-        echo "Lot: {$this->lot}\n";
-        echo "Type: {$this->type}\n";
-        echo "Discount: {$this->discount}\n";
-        echo "Total Price: {$this->calculateTotalPrice()}\n\n";
+        echo "Location: {$this->location}" . "<br>";
+        echo "Price: {$this->price}" . "<br>";
+        echo "Lot: {$this->lot}" . "<br>";
+        echo "Type: {$this->type}" . "<br>";
+        echo "Discount: {$this->discount}" . "<br>";
+        echo "Total Price: {$this->calculateTotalPrice()}" . "<br><br>";
     }
 
     public function calculateTotalPrice() {
@@ -32,7 +32,7 @@ class House {
     }
 }
 
-// Creating instances of the House class
+
 $house1 = new House('La Union', 1500000, '100sqm', 'Pre-selling');
 $house2 = new House('Metro Manila', 1000000, '150sqm', 'Ready for Occupancy');
 $house3 = new House('Cebu', 1200000, '120sqm', 'Pre-selling');
